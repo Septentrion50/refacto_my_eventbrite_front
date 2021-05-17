@@ -19,7 +19,7 @@ Attendance.destroy_all
   u = User.create(
     first_name: f_name, 
     last_name: l_name, 
-    email: "#{f_name}.#{l_name}@yopmail.com",
+    email: "#{f_name.downcase}.#{l_name.downcase}@yopmail.com",
     encrypted_password: Faker::Internet.password(min_length: 6, max_length: 20)
   )
 end
