@@ -72,3 +72,6 @@ gem 'table_print'
 gem 'jquery-rails'
 
 gem 'faker'
+
+# Variables d'environnement
+gem 'dotenv-rails'
