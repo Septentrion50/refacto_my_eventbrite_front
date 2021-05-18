@@ -1,0 +1,41 @@
+<div class="jumbotron-fluid text-center jumbo jumbo-event">
+  <h1 class="display-2 text-dark"><%=@event.title%></h1>
+  <h5 class="display-5 text-light"><%=@event.location%></h5>
+</div>
+<div class="container mt-5">
+  <div class="row cols-2">
+    <div class="col">
+      <h2>Description</h2>
+      <p><%=@event.description%></p>
+    </div>
+    <div class="col text-end">
+      <h4>Prix : <%=@event.price%> €</h4>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row cols-2">
+    <div class="col">
+      <h3>Nombre d'inscriptions</h3>
+      <p><%=@event.attendances.size%></p>
+    </div>
+    <div class="col text-end">
+      <h3>Organisé par </h3>
+      <p><%=@event.organizer.email%></p>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row cols-2">
+    <div class="col">
+      <h3>Date de début</h3>
+      <p><%=@start_date%></p>
+    </div>
+    <div class="col text-end">
+      <h3>Date de fin</h3>
+      <p><%=@end_date%></p>
+    </div>
+  </div>
+</div>
