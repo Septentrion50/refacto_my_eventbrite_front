@@ -1,0 +1,26 @@
+<div class="jumbotron-fluid text-center jumbo-img">
+  <h1 class="display-3 text-light">Tous les évènements</h1>
+  <h5 class="text-muted">Dans votre ville</h5>
+</div>
+<div class="container">
+  <%@events.each do |e|%>
+    <div class="card" style="width: 20rem;">
+      <div class="card-header">
+        <h3>
+          <%=e.title%>
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="card-text">
+          <%=e.description%>
+        </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%=e.location%></li>
+            <li class="list-group-item"><%=e.duration%></li>
+            <li class="list-group-item"><%=e.price%></li>
+          </ul>
+          <a class="btn btn-primary" href=<%=event_show(e.id)%></a>
+      </div>
+    </div>
+  <%end%>
+</div>

@@ -71,7 +71,11 @@ gem 'table_print'
 # Compatibility with heroku
 gem 'jquery-rails'
 
+# Populate database
 gem 'faker'
 
 # Variables d'environnement
 gem 'dotenv-rails'
+
+# Managing routes and config automatically
+gem 'devise'

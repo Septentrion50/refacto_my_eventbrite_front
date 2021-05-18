@@ -1,0 +1,73 @@
+<div class="jumbotron-fluid jumbo-profil text-center">
+  <h1 class="display-1 text-light">Mon profil</h1>
+</div>
+
+<div class="container">
+  <div class="row mt-5 cols-2">
+
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3>Mes infos</h3>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Email</strong> <p><%=current_user.email%></p> 
+            </li>
+            <li class="list-group-item">
+              <strong>Prénom</strong> <p><%=current_user.first_name%></p> 
+            </li>
+            <li class="list-group-item">
+              <strong>Nom</strong> <p><%=current_user.last_name%></p> 
+            </li>
+            <li class="list-group-item">
+              <strong>Description</strong><br><p><%=current_user.description%></p> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3>Actions</h3>
+        </div>
+        <div class="card-body text-center">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <%=button_to 'Changer mon mot de passe', new_user_password_path(current_user.id), method: 'get', class: 'btn btn-primary'%>
+            </li>
+            <li class="list-group-item">
+              <a href=<%=edit_user_registration_path%> class="btn btn-primary">Modifier mes infos</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Modifier ma description</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Modifier mon prénom</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="btn btn-primary">Modifier mon nom</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <%current_user.organised_events.each do |o|%>
+        <div class="card">
+          <div class="card-header">
+            <h3><%=o.title%></h3>
+          </div>
+          <div class="card-body">
+            <%=button_to "Voir l'évènement", event_path(o.id), method: 'get', class: "btn btn-primary"%>
+          </div>
+        </div>
+      <%end%>
+    </div>
+
+  </div>
+</div>
