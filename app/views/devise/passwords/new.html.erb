@@ -3,7 +3,7 @@
     <div class="col-md-6 offset-md-3">
       <br><br><br>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <h1 class="h3 mb-3 font-weight-normal text-center">Nouveau mot de passe</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-center">Entrez votre adresse mail de connexion</h1>
         <%= render "devise/shared/error_messages", resource: resource %>
           <div class="form-group">
           <%= f.label 'Email' %><br />
