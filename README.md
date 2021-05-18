@@ -1,24 +1,14 @@
-# README
+# My Eventbrite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bienvenue sur une contrefaçon Hongkongaise de Eventbrite !
 
-Things you may want to cover:
+N'hésitez pas à aller faire un tour sur [my-eventbrite](https://my-eventbrite-elc.herokuapp.com/) pour voir de quoi il retourne !
 
-* Ruby version
+## Pour tester
 
-* System dependencies
+|Description|Infos à rentrer|
+|:----|:----|
+|Créer un nouvel utilisateur|Suivez les instructions du formulaire|
+|Créer un nouvel événement|Tout pareil|
+|Réserver un événement|Coming soon ! ;)|
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
