@@ -15,11 +15,20 @@
           <%=e.description%>
         </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%=e.location%></li>
-            <li class="list-group-item"><%=e.duration%></li>
-            <li class="list-group-item"><%=e.price%></li>
+            <li class="list-group-item">
+              <strong>Lieu</strong>
+              <p><%=e.location%></p>
+            </li>
+            <li class="list-group-item">
+              <strong>Durée</strong>
+              <p><%=e.duration%></p>
+            </li>
+            <li class="list-group-item">
+              <strong>Durée</strong>
+              <p><%=e.price%></p>
+            </li>
           </ul>
-          <a class="btn btn-primary" href=<%=event_path(e.id)%></a>
+          <a class="btn btn-primary" href=<%=event_path(e.id)%>>Voir</a>
       </div>
     </div>
   <%end%>
