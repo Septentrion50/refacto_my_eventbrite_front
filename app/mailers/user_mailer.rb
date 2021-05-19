@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'erwan56lecorre@gmail.com'
+  default from: 'robert.michalon@yopmail.com'
 
   def welcome_email(user)
     @user = user
