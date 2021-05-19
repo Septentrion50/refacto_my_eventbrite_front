@@ -13,4 +13,3 @@ N'hésitez pas à aller faire un tour sur [my-eventbrite](https://my-eventbrite-
 |Réserver un événement|Coming soon ! ;)|
 
 ## SVP Utilisez une adresse en yopmail.com et ne rentrez pas votre véritable adresse. 
-# SVP SUPPRIMEZ LES MESSAGES RECUS SUR YOPMAIL J'UTILISE MON ADRESSE PERSONELLE POUR LES TESTS
