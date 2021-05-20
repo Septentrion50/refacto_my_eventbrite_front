@@ -30,4 +30,4 @@
 .env
 
 # Do not track swap files
-*.swap
+*.swp
