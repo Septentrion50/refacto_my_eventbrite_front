@@ -1,0 +1,25 @@
+<div class="jumbotron-fluid text-center jumbo jumbo-payment">
+  <h1 class="display-3 text-dark">Réservation</h1>
+  <h3 class="display-5 text-dark"><%=@event.title%></h3>
+</div>
+<div class="container text-center mt-5">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Montant de la réservation : <%= @amount %> €</span>
+      </label>
+    </article>
+    <br/>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Achat d'un produit"
+    data-amount=<%= @amount%>
+    data-currency="eur"
+    data-locale="auto"></script>
+  <% end %>
+</div>
