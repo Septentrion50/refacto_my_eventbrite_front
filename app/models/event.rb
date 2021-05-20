@@ -1,4 +1,7 @@
 class Event < ApplicationRecord
+
+  has_one_attached :image
+
   validates :start_date,
             presence: true,
             numericality: { greater_than_or_equal_to: Time.now.to_i }

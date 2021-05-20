@@ -1,7 +1,7 @@
 class ChargesController < ApplicationController
   def new
     @user = current_user
-    @event = Event.where(:id == params[:id])[0]
+    @event = Event.find(params[:event_id])
     @amount = @event.price.to_i
   end
 
