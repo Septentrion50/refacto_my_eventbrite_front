@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
   if @attendance.save
     redirect_to event_path(params[:event_id]), notice: "Réservation enregistrée !"
   else
-    flash.now[:alert] = "Problème lors de l'enregistrement"
+    flash.now[:notice] = "Problème lors de l'enregistrement"
     render :new
   end
   end
