@@ -17,6 +17,8 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        position: relative;
+        z-index: -2;
       }
 
       .jumbo-img {
@@ -40,6 +42,16 @@
       .jumbo-payment {
         background-image: url(https://images.pexels.com/photos/3483098/pexels-photo-3483098.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
         height: 15rem;
+      }
+
+      .layer {
+        background-color: rgba(12, 12, 12, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
       }
     </style>
   </head>
@@ -85,6 +97,11 @@
           </div>
         </div>
       </nav>
+      <% flash.each do | type, msg |%>
+        <div class=<%="alert alert-#{type}"%>>
+          <%= msg %>
+        </div>
+      <%end%>
     </header>
 
     <%= yield %>

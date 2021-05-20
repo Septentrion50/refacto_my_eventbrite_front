@@ -1,5 +1,6 @@
 <div class="jumbotron-fluid text-center jumbo jumbo-event">
-  <h1 class="display-2 text-dark"><%=@event.title%></h1>
+  <div class="layer"></div>
+  <h1 class="display-2 text-light"><%=@event.title%></h1>
   <h5 class="display-5 text-light"><%=@event.location%></h5>
 </div>
 <div class="container mt-5">
@@ -44,7 +45,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col">
-        <%=link_to 'Réserver', new_charge_path(@event.id), class: "btn btn-primary"%>
+        <%=link_to 'Réserver', new_charge_path, class: "btn btn-primary"%>
       </div>
     </div>
   </div>

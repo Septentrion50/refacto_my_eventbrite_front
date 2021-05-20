@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def auth_user?
     unless User.find(params[:id]) == current_user
-      redirect_to events_path, alert: "Ce n'est pas votre profil !"
+      redirect_to events_path, notice: "Ce n'est pas votre profil !"
     end
   end
 end

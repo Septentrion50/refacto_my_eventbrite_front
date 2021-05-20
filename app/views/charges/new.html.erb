@@ -1,8 +1,18 @@
 <div class="jumbotron-fluid text-center jumbo jumbo-payment">
-  <h1 class="display-3 text-dark">Réservation</h1>
-  <h3 class="display-5 text-dark"><%=@event.title%></h3>
+  <div class="layer"></div>
+  <h1 class="display-3 text-light">Réservation</h1>
+  <h3 class="display-5 text-light"><%=@event.title%></h3>
 </div>
 <div class="container text-center mt-5">
+  <div class="container mb-5">
+    <h3>Réservation d'une place à l'événement <%=@event.title%></h3>
+    <br>
+    <strong>Invitation au nom de </strong> <p><%=@user.first_name%> <%=@user.last_name%></p>
+    <br>
+    <strong>Le</strong> <p><%=@event.start_date.to_date%></p>
+    <br>
+    <strong>L'événement se tient à</strong> <p><%=@event.location%></p>
+  </div>
   <%= form_tag charges_path do %>
     <article>
       <% if flash[:error].present? %>
@@ -10,6 +20,7 @@
           <p><%= flash[:error] %></p>
         </div>
       <% end %>
+      <%=hidden_field_tag 'event_id', @event.id, class: "form-control"%>
       <label class="amount">
         <span>Montant de la réservation : <%= @amount %> €</span>
       </label>
@@ -18,7 +29,7 @@
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-description="Achat d'un produit"
-    data-amount=<%= @amount%>
+    data-amount=<%= @amount * 100%>
     data-currency="eur"
     data-locale="auto"></script>
   <% end %>
