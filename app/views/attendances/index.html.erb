@@ -1,0 +1,17 @@
+<div class="jumbotron-fluid text-center jumbo jumbo-resa mb-3">
+  <div class="layer"></div>
+  <h1 class="display-3">Réservations de l'événement</h1>
+</div>
+<div class="container text-end">
+  <%=link_to "Modifier l'événement", edit_event_path(@event.id), class: "btn btn-warning"%>
+    <div class="row cols-3 text-start mt-5">
+    <%@event.attendances.each do |a|%>
+      <div class="card">
+        <h3 class="card-title">Réservation n°<%=a.id%></h3>
+        <div class="card-text">
+          <p><%=a.user.email%></p>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
