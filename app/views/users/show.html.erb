@@ -1,6 +1,15 @@
 <div class="jumbotron-fluid jumbo jumbo-profil text-center">
   <div class="layer"></div>
   <h1 class="display-1 text-light">Mon profil</h1>
+  <div class="container" style="width: 8rem; height: 10rem;">
+    <%if @user.avatar.attached?%>
+      <div class="container avatar-image" style="background-image: url('<%=polymorphic_url(@user.avatar)%>');">
+      </div>
+    <%else%>
+      <div class="container avatar-image default-avatar">
+      </div>
+    <%end%>
+  </div>
 </div>
 
 <div class="container">
@@ -57,9 +66,9 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
       <%current_user.organised_events.each do |o|%>
-        <div class="card">
+        <div class="card mt-3">
           <div class="card-header">
             <h3><%=o.title%></h3>
           </div>
@@ -67,6 +76,16 @@
             <%=button_to "Voir l'évènement", event_path(o.id), method: 'get', class: "btn btn-primary"%>
           </div>
         </div>
+      <%end%>
+    </div>
+
+    <div class="container mt-4 mb-4">
+      <%=form_with url: user_avatars_path(@user.id) do |f|%>
+        <div class="form-group mb-3">
+          <%=f.label :avatar, class: "h3"%>
+          <%=f.file_field :avatar, class: "form-control"%>
+        </div>
+        <%=f.submit 'Ajouter', class: "btn btn-primary"%>
       <%end%>
     </div>
 

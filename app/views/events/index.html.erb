@@ -11,6 +11,15 @@
           <h3>
             <%=e.title%>
           </h3>
+        <%if e.image.attached?%>
+          <div class="card-img-top event-img" style="background-image: url(' <%=polymorphic_url(e.image)%> ');">
+            --
+          </div>
+        <%else%>
+          <div class="card-img-top event-img jumbo-event">
+            --
+          </div>
+        <%end%>
         </div>
         <div class="card-body">
           <div class="card-text">
