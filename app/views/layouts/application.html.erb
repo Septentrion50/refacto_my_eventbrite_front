@@ -25,6 +25,11 @@
               <li class="nav-item">
                 <a class="nav-link" href=<%=new_event_path%>>Créer un évènement</a>
               </li>
+              <%if is_admin?%>
+                <li>
+                  <a href="#" class="nav-link">Gestion du site</a>
+                </li>
+              <%end%>
               <li class="nav-item dropdown">
                 <%if user_signed_in?%>
 
