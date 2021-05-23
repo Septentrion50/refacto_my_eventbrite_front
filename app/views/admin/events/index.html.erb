@@ -1,0 +1,42 @@
+<div class="container-fluid pt-3 pb-3 top-admin-event-title">
+  <h1>Gestion des événements</h1>
+</div>
+<div class="container-fluid">
+  <div class="row cols-2">
+    <div class="col-2 pt-3 side-1">
+      <%=link_to 'Gestion des utilisateurs', admin_root_path, class: "nav-link text-dark"%>
+      <%=link_to 'Gestion des événements', admin_events_path, class: "nav-link text-dark"%>
+    </div>
+    <div class="col-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Organisateur</th>
+            <th scope="col">Date</th>
+            <th scope="col">Durée</th>
+            <th scope="col">Description</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Opérations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@events.each do |e|%>
+            <tr>
+              <th scope="row"><%=e.id%></th>
+              <td><%=e.title%></td>
+              <td><%=e.organizer.email%></td>
+              <td><%=e.start_date.to_date%></td>
+              <td><%=e.duration%></td>
+              <td><%=e.description%></td>
+              <td><%=e.price%></td>
+              <td><%=link_to 'Opérations', admin_event_path(e.id), class: "btn btn-warning"%></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -5,6 +5,7 @@
         position: relative;
         z-index: -2;
         height: 15rem;
+		text-align: center;
       }
 .jumbo-img {
         background-image: url(https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
@@ -28,6 +29,9 @@
 .jumbo-resa {
         background-image: url(https://images.pexels.com/photos/5185178/pexels-photo-5185178.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
       }
+.admin-users {
+		background-image: url(https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+	  }
 .layer {
         background-color: rgba(12, 12, 12, 0.5);
         position: absolute;
@@ -55,4 +59,13 @@
 		height: 200px;
 		width: 100px;
 		margin: 0;
+	  }
+.side-1 {
+		background-color: #e0e0e0;
+	  }
+.top-admin-event-title {
+		background-color: #bcafd3
+	  }
+.top-admin-user-title {
+		background-color: #afd3bb
 	  }

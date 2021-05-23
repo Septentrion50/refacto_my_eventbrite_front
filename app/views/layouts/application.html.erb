@@ -27,7 +27,7 @@
               </li>
               <%if is_admin?%>
                 <li>
-                  <a href="#" class="nav-link">Gestion du site</a>
+                  <%=link_to 'Gestion du site', admin_root_path, class: "nav-link"%>
                 </li>
               <%end%>
               <li class="nav-item dropdown">
