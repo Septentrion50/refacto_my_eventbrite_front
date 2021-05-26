@@ -1,0 +1,10 @@
+<div class="container mt-4 mb-3">
+  <%=form_with url: event_images_path(@event.id) do |f|%> 
+    <div class="custom-file mb-3">
+      <%=f.file_field :image, class: "custom-file-input" %>
+      <%=f.label :image, 'Image', class: "custom-file-label"%>
+    </div>
+    <%=f.submit "Ajouter", class: "btn btn-primary"%>
+  <%end%>
+</div>
+

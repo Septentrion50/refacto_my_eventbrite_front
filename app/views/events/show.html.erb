@@ -4,15 +4,7 @@
 <%=render partial: 'event_organism', object: @event%>
 
 <%if creator?(current_user, @event)%>
-  
-    <div class="container mt-4 mb-3">
-      <%=form_with url: event_images_path(@event.id) do |f|%> 
-        <div class="form-group mb-3">
-          <%=f.label :image, 'Image', class: "h3"%>
-          <%=f.file_field :image, class: "form-control" %>
-        </div>
-        <%=f.submit "Ajouter", class: "btn btn-primary"%>
-      <%end%>
-    </div>
+
+  <%=render 'image_form', object: @event%>
 
 <%end%>
