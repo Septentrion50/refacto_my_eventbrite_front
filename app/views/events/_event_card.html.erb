@@ -1,0 +1,25 @@
+<div class="card my-4" >
+  <%if @event.image.attached?%>
+    <div class="card-header img-center" style="background-image: url('<%=polymorphic_url(@event.image)%>');">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%=@event.title%></h5>
+      <h6>Le 05/07/2021</h6>
+      <p class="card-text">
+        <%=@event.description%>
+      </p>
+      <%=link_to 'Voir', event_path(@event.id), class: 'btn-lg btn-primary'%>
+    </div>
+  <%else%>
+    <div class="card-img-top img-center jumbo-event">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%=@event.title%></h5>
+      <h6>Le 05/07/2021</h6>
+      <p class="card-text">
+        <%=@event.description%>
+      </p>
+      <%=link_to 'Voir', event_path(@event.id), class: 'btn-lg btn-primary'%>
+    </div>
+  <%end%>
+</div>

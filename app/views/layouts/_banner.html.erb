@@ -1,0 +1,17 @@
+<%object = @object%>
+<%page_title = @page_title%>
+<%if object.image.attached?%>
+  <div class="jumbotron-fluid text-center jumbo jumbo-std img-center mb-5" style="background-image: url('<%=polymorphic_url(object.image)%>')"> 
+    <div class="container">
+        <div class="jumbo-layer"></div>
+        <h1 class="display-3"><%=page_title%></h1>
+    </div>
+  </div> 
+<%else%>
+  <div class="jumbotron-fluid text-center jumbo jumbo-std jumbo-img img-center mb-5">
+    <div class="container">
+        <div class="jumbo-layer"></div>
+        <h1 class="display-3"><%=page_title%></h1>
+    </div>
+  </div> 
+<%end%>

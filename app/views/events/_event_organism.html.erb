@@ -1,0 +1,82 @@
+<body>
+<div class="container p-0 bg-light">
+  <div class="container bg-dark my-5">
+      <div class="row cols-2">
+        <%if @event.image.attached?%>
+          <div class="col-8 img-center" style="background-image: url('<%=polymorphic_url(@event.image)%>');">
+          </div>
+        <%else%>
+          <div class="col-8 jumbo-event img-center">
+          </div>
+        <%end%>
+          <div class="col-4 py-3">
+            <h4>Date</h4>
+            <p><%=@event.start_date.to_date%></p>
+            <h4>Durée</h4>
+            <p><%=@event.duration%> minutes</p>
+            <h5>Organisé par</h5>
+            <p><%=@event.organizer.email%></p>
+            <h5>Nombre d'invités</h5>
+            <p><%=@event.attendances.size%></p>
+          </div>
+      </div>
+  </div>
+  <div class="container bg-white p-4">
+      <div class="row cols-2 align-items-center">
+          <div class="col-10 px-5">
+            <a class="text-dark mr-4" href=<%=user_path(current_user.id)%>><i class="fas fa-user"></i></a>
+              <a class="text-dark" href="#"><i class="fas fa-share-alt"></i></a>
+              <%if creator?(current_user, @event)%>
+                <a class="btn-lg btn-primary ml-3" href=<%=event_attendances_path(@event.id)%>>Réservations</a>
+              <%end%>
+          </div>
+          <div class="col-2">
+            <%unless creator?(current_user, @event) || on_the_list(current_user, @event)%>
+              <a class="btn-lg btn-warning" href=<%=new_event_charge_path(@event.id)%>>S'inscrire</a>
+            <%else%>
+              <button type="button" class="btn-lg btn-warning" disabled>S'inscrire</button>
+            <%end%>
+          </div>
+      </div>
+  </div>
+  <div class="container">
+      <div class="row cols-2 align-items-center">
+          <div class="col-8 p-4 bg-dark">
+              <h2>Description</h2>
+              <p><%=@event.description%></p>
+          </div>
+          <div class="col-4 p-5">
+              <div class="container text-right">
+                  <ul class=" list-group list-group-flush">
+                      <li class="list-group-item bg-primary">
+                        <h5 class="mr-5"><%=@event.location%></h5>
+                      </li>
+                      <li class="list-group-item bg-primary">
+                        <h5 class="mr-5"><%=@event.price%> €</h5>
+                      </li>
+                      <li class="list-group-item bg-primary">
+                        <h5 class="mr-5">Le <%=@event.start_date.to_date%></h5>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <nav class="navbar justify-content-center bg-dark">
+      <ul class="navbar nav">
+          <li class="nav-item">
+              <a href="https://fr-fr.facebook.com/" class="nav-link h3 text-white social"><i class="fab fa-facebook-square"></i></a>
+          </li>
+          <li class="nav-item">
+              <a href="https://twitter.com/" class="nav-link h3 text-white social"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+              <a href="https://www.instagram.com/" class="nav-link h3 text-white social"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="nav-item">
+              <a href="https://www.reddit.com/" class="nav-link h3 text-white social"><i class="fab fa-reddit-square"></i></a>
+          </li>
+      </ul>
+  </nav>
+</div>
+</body>

@@ -1,46 +1,10 @@
-<div class="jumbotron-fluid text-center jumbo jumbo-img">
-  <div class="layer"></div>
-  <h1 class="display-3 text-light">Tous les évènements</h1>
-  <h5 class="text-light">Dans votre ville</h5>
-</div>
+<%=render 'banner'%>
 <div class="container mt-5">
-  <div class="row cols-3 justify-content-center">
+  <div class="row justify-content-center">
     <%@events.each do |e|%>
-      <div class="card" style="width: 20rem; margin-left: 1rem; margin-bottom: 1rem;">
-        <div class="card-title mt-2 ml-2">
-          <h3>
-            <%=e.title%>
-          </h3>
-        <%if e.image.attached?%>
-          <div class="card-img-top event-img" style="background-image: url(' <%=polymorphic_url(e.image)%> ');">
-            --
-          </div>
-        <%else%>
-          <div class="card-img-top event-img jumbo-event">
-            --
-          </div>
-        <%end%>
-        </div>
-        <div class="card-body">
-          <div class="card-text">
-            <%=e.description%>
-          </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <strong>Lieu</strong>
-                <p><%=e.location%></p>
-              </li>
-              <li class="list-group-item">
-                <strong>Durée</strong>
-                <p><%=e.duration%> minutes</p>
-              </li>
-              <li class="list-group-item">
-                <strong>Prix</strong>
-                <p><%=e.price%> €</p>
-              </li>
-            </ul>
-            <a class="btn btn-primary" href=<%=event_path(e.id)%>>Voir</a>
-        </div>
+      <div class="col-4">
+        <%@event = e%>
+        <%=render partial: 'event_card', object: @event%>
       </div>
     <%end%>
   </div>
